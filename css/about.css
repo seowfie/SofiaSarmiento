@@ -1,0 +1,386 @@
+/* --- about.css --- */
+
+/* =========================================
+   KEYFRAME ANIMATIONS
+   ========================================= */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes floatImage {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes floatButton {
+    0% { transform: translateY(0px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    50% { transform: translateY(-6px); box-shadow: 0 15px 25px rgba(0,0,0,0.15); }
+    100% { transform: translateY(0px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+}
+
+/* =========================================
+   MAIN LAYOUT
+   ========================================= */
+.about-main {
+    margin-top: 140px; 
+    width: 100%;
+    max-width: 1344px;
+    padding: 0 20px; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 80px;
+}
+
+/* 1. HERO CARD */
+.about-hero-card {
+    width: 100%;
+    height: auto;
+    min-height: 480px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 48px;
+    padding: 60px;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: background 0.3s ease;
+    
+    /* Liquid Background Animation */
+    background: linear-gradient(135deg, #FFF8E7 0%, #E8F4F2 50%, #FFF8E7 100%);
+    background-size: 200% 200%;
+    animation: gradientMove 8s ease infinite;
+}
+
+.about-hero-content {
+    width: 60%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Staggered Content Entrances */
+.about-hero-content .status-badge { opacity: 0; animation: slideInLeft 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards 0.1s; }
+.about-hero-content h1 { opacity: 0; animation: slideInLeft 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards 0.3s; }
+.about-hero-content p { opacity: 0; animation: slideInLeft 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards 0.5s; }
+.about-buttons { opacity: 0; animation: slideInLeft 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards 0.7s; }
+
+.about-hero-content h1 {
+    font-family: var(--heading-font);
+    font-style: var(--heading-style);
+    font-size: 3rem; 
+    margin-bottom: 15px; 
+    line-height: 1.15;
+    color: var(--heading-color);
+}
+
+.about-hero-content p {
+    font-family: var(--body-font);
+    font-size: 1rem; 
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 90%;
+    color: var(--body-color);
+    font-weight: 400; 
+}
+
+.about-buttons { 
+    display: flex; 
+    gap: 15px; 
+    flex-wrap: wrap; 
+}
+
+/* Interactive Bouncy & Shiny Pills */
+.info-pill {
+    padding: 12px 24px; 
+    border-radius: 12px;
+    font-weight: bold;
+    font-family: var(--nav-font);
+    font-size: 0.9rem; 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    
+    /* Idle floating animation */
+    animation: floatButton 4s ease-in-out infinite;
+}
+
+/* Stagger the floating so they bounce independently */
+.email-pill { animation-delay: 0s; background-color: #C0DDDA; color: #364153; }
+.loc-pill { animation-delay: 0.5s; background-color: #FBE29D; color: #775635; }
+
+.info-pill::after {
+    content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg); transition: left 0.6s ease; z-index: 1;
+}
+
+.info-pill:hover::after { left: 200%; }
+.info-pill:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    animation-play-state: paused; /* Pauses the float while hovering */
+}
+
+.about-hero-image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+    animation: slideInRight 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards 0.6s; 
+}
+
+.about-hero-image img {
+    width: 100%;
+    max-width: 420px; 
+    border-radius: 24px;
+    animation: floatImage 6s ease-in-out infinite; /* Continuous float */
+    transition: transform 0.4s ease;
+}
+
+.about-hero-image img:hover {
+    transform: scale(1.05) rotate(2deg); /* Interactive tilt */
+}
+
+/* Dark Mode Hero Overrides */
+[data-theme="dark"] .about-hero-card { 
+    background: linear-gradient(135deg, #C3F208 0%, #9cb91a 50%, #C3F208 100%);
+    background-size: 200% 200%;
+}
+
+[data-theme="dark"] .about-hero-content h1,
+[data-theme="dark"] .about-hero-content p,
+[data-theme="dark"] .about-hero-content strong {
+    color: #161B22; font-family: 'Space Mono', monospace; font-style: normal;
+}
+[data-theme="dark"] .about-hero-content h1 { font-weight: 700; font-size: 2.4rem; } 
+[data-theme="dark"] .email-pill { background-color: #161B22; color: #C3F208; border: 1px solid #161B22; }
+[data-theme="dark"] .loc-pill { background-color: transparent; border: 1px solid #161B22; color: #161B22; }
+[data-theme="dark"] .about-hero-image img { border: none; }
+[data-theme="dark"] .about-hero-card .status-badge { background-color: #161B22; color: #C3F208; border: 1px solid #161B22; }
+
+
+/* --- 2. TECH SKILLS SECTION --- */
+.tech-skills-section {
+    width: 100%; display: flex; flex-direction: column;
+    align-items: flex-start; padding-left: 60px; box-sizing: border-box;
+    opacity: 0; animation: fadeInUp 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards 1s;
+}
+
+.section-title {
+    font-size: 2.8rem; margin-bottom: 40px; font-family: var(--heading-font); 
+    font-weight: 700; font-style: var(--heading-style);
+    color: var(--heading-color); text-align: left; width: 100%;
+}
+[data-theme="dark"] .section-title { font-family: 'Space Mono', monospace; font-style: normal; color: #C3F208; font-size: 2.4rem; }
+
+.skill-category { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 50px; width: 100%; }
+
+.category-label {
+    display: flex; width: 100%; max-width: 1080px; height: auto;
+    min-height: 54px; padding: 12px 24px; justify-content: center;
+    flex-direction: column; box-sizing: border-box; margin-bottom: 20px;
+    font-family: var(--heading-font); font-weight: bold;
+    font-size: 1.05rem; text-transform: uppercase; letter-spacing: 1px;
+}
+
+/* Alternating Colors */
+.skill-category:nth-of-type(odd) .category-label { border-radius: 20px; background: #E6F0EF; border: 2px solid rgba(192, 221, 218, 0.50); color: #5A6A7E; }
+.skill-category:nth-of-type(even) .category-label { border-radius: 20px; background: #FBE29D; border: 2px solid rgba(192, 221, 218, 0.50); color: #775635; }
+
+[data-theme="dark"] .category-label {
+    border-radius: 20px; border: 2px solid rgba(0, 0, 0, 0.00); background: #30363D; color: #FFF;
+    font-family: 'Michroma', sans-serif; font-size: 1.05rem; font-style: normal; font-weight: 400; text-transform: none;
+}
+
+/* SKILLS GRID */
+.skills-grid { width: 100%; max-width: 1080px; display: flex; flex-wrap: wrap; gap: 16px; }
+
+.skill-card {
+    width: 135px; height: 135px; display: flex; flex-direction: column; justify-content: center; align-items: center;
+    gap: 10px; border-radius: 20px; background: #F1F1F1; border: 2px solid transparent; 
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, background-position 0.4s ease;
+    background-image: linear-gradient(135deg, #FBE29D 0%, #C0DDDA 50%, #F1F1F1 100%);
+    background-size: 300% 300%; background-position: 100% 100%; 
+}
+
+.skill-card:hover { transform: translateY(-12px) scale(1.05); box-shadow: 0 15px 30px rgba(0,0,0,0.15); background-position: 0% 0%; }
+.skill-card img { width: 50px; height: 50px; object-fit: contain; z-index: 2; transition: transform 0.3s ease; }
+.skill-card:hover img { transform: scale(1.1); }
+.skill-card span { font-family: var(--body-font); font-size: 0.95rem; font-weight: bold; color: #364153; text-align: center; z-index: 2; }
+
+/* Dark Mode Skill Card */
+[data-theme="dark"] .skill-card { 
+    background-image: linear-gradient(135deg, #C3F208 0%, #404852 50%, #2A313A 100%);
+    background-size: 300% 300%; background-position: 100% 100%; border: 1px solid #3d444d; 
+}
+[data-theme="dark"] .skill-card:hover { background-position: 0% 0%; box-shadow: 0 15px 30px rgba(195, 242, 8, 0.15); }
+[data-theme="dark"] .skill-card span { color: #FFFFFF; }
+[data-theme="dark"] .skill-card:hover span { color: #161B22; }
+
+
+/* --- 3. SOFT SKILLS SECTION --- */
+.soft-skills-section { 
+    width: 100%; display: flex; flex-direction: column; align-items: center; 
+    opacity: 0; animation: fadeInUp 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards 1.2s;
+}
+
+.soft-skills-container {
+    width: 100%; max-width: 1344px; padding: 50px; border-radius: 40px;
+    background: linear-gradient(90deg, #FBE29D 0%, #C0DDDA 100%);
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; box-sizing: border-box;
+}
+
+.soft-skill-card {
+    background: rgba(255, 255, 255, 0.7); padding: 25px; border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.9); box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    display: flex; flex-direction: column; justify-content: center; 
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, background 0.3s ease; 
+    backdrop-filter: blur(10px);
+}
+.soft-skill-card:hover { transform: translateY(-10px) scale(1.03); background: rgba(255, 255, 255, 1); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+.soft-skill-card h4 { font-family: var(--heading-font); font-style: var(--heading-style); color: #775635; font-size: 1.3rem; margin-bottom: 8px; }
+[data-theme="dark"] .soft-skill-card h4 { font-family: 'Space Mono', monospace; font-style: normal; color: #C3F208; font-size: 1.2rem; }
+.soft-skill-card p { font-family: var(--body-font); color: #364153; font-size: 1rem; margin: 0; font-weight: 500; }
+
+[data-theme="dark"] .soft-skills-container { background: #C3F208; }
+[data-theme="dark"] .soft-skill-card { background: rgba(22, 27, 34, 0.85); border: 1px solid rgba(22, 27, 34, 0.3); }
+[data-theme="dark"] .soft-skill-card:hover { background: rgba(22, 27, 34, 1); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+[data-theme="dark"] .soft-skill-card p { color: #e0e0e0; }
+
+
+/* --- 4. CERTIFICATIONS SECTION --- */
+.certifications-section { 
+    width: 100%; display: flex; flex-direction: column; align-items: flex-start; padding-left: 60px; box-sizing: border-box; 
+    opacity: 0; animation: fadeInUp 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards 1.4s;
+}
+
+.certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; width: 100%; max-width: 1080px; }
+
+.cert-card {
+    background: #fff; padding: 30px; border-radius: 20px; text-decoration: none; color: inherit;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; flex-direction: column; border: 1px solid rgba(0,0,0,0.05); 
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.cert-card:hover { 
+    transform: translateY(-8px) scale(1.02); 
+    border-color: #775635; 
+    box-shadow: 0 20px 40px rgba(119, 86, 53, 0.15); 
+}
+
+.cert-year { font-family: var(--nav-font); font-weight: bold; font-size: 0.85rem; color: #888; margin-bottom: 10px; }
+.cert-card h3 { font-family: var(--heading-font); font-style: var(--heading-style); font-size: 1.25rem; color: #775635; margin-bottom: 10px; line-height: 1.3; transition: color 0.2s ease; }
+.cert-issuer { font-family: var(--body-font); font-size: 0.9rem; font-weight: bold; color: #555; margin-bottom: 20px; }
+.view-cert-text { margin-top: auto; font-family: var(--nav-font); font-weight: bold; font-size: 0.85rem; color: #775635; opacity: 0.7; transition: opacity 0.2s; }
+.cert-card:hover .view-cert-text { opacity: 1; }
+
+[data-theme="dark"] .cert-card { background: #21262D; border-color: #30363D; box-shadow: none; }
+[data-theme="dark"] .cert-card:hover { border-color: #C3F208; box-shadow: 0 20px 40px rgba(195, 242, 8, 0.1); }
+[data-theme="dark"] .cert-card h3 { font-family: 'Space Mono', monospace; font-style: normal; color: #fff; font-size: 1.1rem; }
+[data-theme="dark"] .cert-issuer { color: #aaa; }
+[data-theme="dark"] .view-cert-text { color: #C3F208; }
+
+/* =========================================
+   GLOBAL BUTTON ANIMATIONS (SHINE + FLOAT) 
+   FOR THE CERTIFICATIONS BUTTON
+   ========================================= */
+.btn {
+    position: relative; overflow: hidden; 
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.btn::after {
+    content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg); transition: left 0.6s ease; z-index: 1;
+}
+.btn:hover::after { left: 200%; } 
+.btn:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 10px 25px rgba(0,0,0,0.15); animation-play-state: paused; }
+[data-theme="dark"] .btn:hover { box-shadow: 0 10px 25px rgba(195, 242, 8, 0.2); }
+
+/* Apply Float & Fade to the "See All Certifications" Button */
+.certifications-section .btn {
+    opacity: 0; 
+    animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards 1.6s, floatButton 3s ease-in-out infinite 2.4s;
+}
+
+/* =========================================
+   RESPONSIVE MEDIA QUERIES (ABOUT)
+   ========================================= */
+
+@media (max-width: 1024px) {
+    .about-hero-card { flex-direction: column-reverse; padding: 40px; text-align: center; }
+    .about-hero-content { width: 100%; align-items: center; margin-top: 30px; }
+    .about-hero-content h1 { font-size: 2.5rem; } 
+    .about-hero-content p { font-size: 0.95rem; max-width: 100%; }
+    .about-hero-image { width: 80%; animation: fadeInUp 1s forwards 0.4s; } 
+    .about-buttons { justify-content: center; }
+    
+    .tech-skills-section, .certifications-section { padding-left: 0; align-items: center; }
+    .section-title { text-align: center; font-size: 2.2rem; }
+    .skill-category { align-items: center; }
+    .category-label { text-align: center; font-size: 1rem; }
+    .skills-grid { justify-content: center; }
+}
+
+@media (max-width: 600px) {
+    .about-main { margin-top: 120px; }
+    .about-hero-content h1 { font-size: 2rem; } 
+    [data-theme="dark"] .about-hero-content h1 { font-size: 1.8rem; } 
+    .about-hero-content p { font-size: 0.9rem; margin-bottom: 20px; } 
+    
+    .about-buttons { flex-direction: column; width: 100%; }
+    .info-pill { width: 100%; justify-content: center; font-size: 0.85rem; padding: 10px 20px; }
+    
+    .section-title { font-size: 2rem; margin-bottom: 30px; }
+    [data-theme="dark"] .section-title { font-size: 1.8rem; }
+    
+    .skill-card { width: 100px; height: 100px; gap: 8px; border-radius: 16px; }
+    .skill-card img { width: 40px; height: 40px; }
+    .skill-card span { font-size: 0.8rem; }
+    
+    .soft-skills-container { padding: 30px 20px; border-radius: 32px; grid-template-columns: 1fr; }
+    .soft-skill-card h4 { font-size: 1.15rem; }
+    [data-theme="dark"] .soft-skill-card h4 { font-size: 1.05rem; }
+    .soft-skill-card p { font-size: 0.9rem; }
+    
+    .certs-grid { grid-template-columns: 1fr; }
+    .cert-card h3 { font-size: 1.1rem; }
+    [data-theme="dark"] .cert-card h3 { font-size: 1rem; }
+}
+
+/* Extra Small Phones */
+@media (max-width: 400px) {
+    .about-hero-content h1 { font-size: 1.75rem; }
+    .about-hero-content p { font-size: 0.85rem; }
+    .info-pill { font-size: 0.8rem; }
+    .section-title { font-size: 1.75rem; }
+    .category-label { font-size: 0.9rem; }
+}

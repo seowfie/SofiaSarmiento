@@ -1,0 +1,289 @@
+/* --- resume.css --- */
+
+.resume-main {
+    margin-top: 140px;
+    width: 100%;
+    max-width: 1344px; 
+    padding: 0 20px; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.btn.btn-primary {
+    color: #fff;
+    background: #775537;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+body[data-theme="dark"] .btn.btn-primary {
+    color: #C3F208;
+    background: #161B22; 
+}
+
+/* 1. HERO SECTION */
+.resume-hero {
+    background: linear-gradient(135deg, rgba(251, 226, 157, 0.40) 0%, rgba(192, 221, 218, 0.40) 100%);
+    box-shadow: 0 19.704px 39.409px -9.458px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    width: 100%; 
+    display: flex;
+    flex-direction: row; /* Desktop defaults to side-by-side */
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 60px 40px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+/* Added the Image Styling Back */
+.resume-hero-img img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,0.5);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.resume-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+.resume-hero-content h1 {
+    font-family: var(--heading-font);
+    font-style: var(--heading-style);
+    font-size: 3.5rem;
+    color: #775635;
+    margin-bottom: 25px;
+    line-height: 1.1;
+}
+
+.resume-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.contact-pill {
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #364153;
+    border: 1px solid #ddd;
+    font-family: var(--nav-font);
+}
+
+/* DARK MODE HERO */
+[data-theme="dark"] .resume-hero {
+    background: #C3F208;
+    box-shadow: 0 19.704px 39.409px -9.458px rgba(0, 0, 0, 0.25);
+}
+[data-theme="dark"] .resume-hero-img img { border-color: rgba(0,0,0,0.1); }
+[data-theme="dark"] .resume-hero-content h1 { font-family: 'Space Mono', monospace; font-style: normal; color: #161B22; }
+[data-theme="dark"] .contact-pill { background: #161B22; color: #fff; border: none; }
+
+/* Status Badge */
+.status-badge { padding: 10px 15px; font-weight: bold; }
+[data-theme="dark"] .resume-hero .status-badge { background-color: #161B22; color: #C3F208; border: 1px solid #161B22; }
+
+
+/* 2. GRID LAYOUT */
+.resume-grid-layout { width: 100%; display: flex; gap: 50px; align-items: flex-start; }
+
+.left-col { flex: 1; display: flex; flex-direction: column; gap: 40px; }
+.right-col { flex: 1; display: flex; flex-direction: column; gap: 40px; }
+
+.section-header {
+    font-family: var(--heading-font); font-style: italic; color: #775635;
+    margin-bottom: 20px; font-size: 1.5rem; display: flex; align-items: center; gap: 10px;
+}
+[data-theme="dark"] .section-header { font-family: 'Space Mono', monospace; font-style: normal; color: #C3F208; }
+
+/* RESUME CARDS (Shared Base) */
+.resume-card {
+    background: #fff; border-radius: 20px; padding: 30px; margin-bottom: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; border: 1px solid rgba(0,0,0,0.05);
+}
+[data-theme="dark"] .resume-card { background: #21262D; border: 1px solid #30363D; }
+
+/* EDUCATION CARDS Specifics */
+.ed-card .card-year {
+    display: inline-block; background: #FBE29D; color: #775635; padding: 5px 15px; border-radius: 15px; font-weight: bold;
+    font-size: 0.75rem; width: fit-content; margin-bottom: 10px;
+}
+[data-theme="dark"] .ed-card .card-year { background: #C3F208; color: #161B22; }
+
+.resume-card h3 { font-size: 1.1rem; color: #775635; margin-bottom: 5px; font-family: var(--heading-font); }
+[data-theme="dark"] .resume-card h3 { color: #fff; font-family: var(--nav-font); }
+
+.resume-card p { font-size: 0.9rem; color: #555; margin-bottom: 5px; }
+[data-theme="dark"] .resume-card p { color: #ccc; }
+.card-note { font-size: 0.8rem !important; opacity: 0.7; margin-bottom: 15px !important; }
+
+/* Tags */
+.tags-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.tag {
+    display: inline-flex; align-items: center; width: fit-content;    
+    background: #5D4037; color: #fff; padding: 4px 12px; border-radius: 12px; font-size: 0.7rem; font-weight: bold;
+}
+[data-theme="dark"] .tag { background: #C3F208; color: #161B22; }
+
+/* LANGUAGE CARDS */
+.language-card {
+    background: #F1F1F1; border-radius: 16px; padding: 20px; margin-bottom: 15px; display: flex; align-items: center; gap: 20px;
+}
+[data-theme="dark"] .language-card { background: #30363D; }
+.flag-icon { font-size: 2rem; }
+.language-card h3 { margin: 0; color: #364153; }
+.language-card p { margin: 0; font-size: 0.85rem; }
+[data-theme="dark"] .language-card h3 { color: #fff; }
+
+/* JOB CARDS Specifics */
+.job-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px; }
+.job-header h3 { margin: 0; font-size: 1.1rem; }
+
+.card-year-job {
+    background: #C0DDDA; color: #364153; padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; font-weight: bold;
+}
+[data-theme="dark"] .card-year-job { background: #C3F208; color: #161B22; }
+.job-loc { font-size: 0.8rem !important; opacity: 0.7; margin-bottom: 15px !important; }
+.job-desc { padding-left: 15px; margin: 0; }
+.job-desc li { font-size: 0.85rem; color: #555; margin-bottom: 8px; line-height: 1.5; }
+[data-theme="dark"] .job-desc li { color: #ccc; }
+
+
+/* 3. CERTIFICATIONS */
+.certifications-section { width: 100%; }
+.certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.cert-card {
+    background: #FBE29D; padding: 25px; border-radius: 20px; display: flex; flex-direction: column; align-items: flex-start;
+    text-decoration: none; color: inherit; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cert-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+[data-theme="dark"] .cert-card { background: #30363D; border: 1px solid #444; }
+
+.cert-year {
+    background: #364153; color: #fff; padding: 2px 10px; border-radius: 8px; font-size: 0.7rem; width: fit-content; margin-bottom: 10px;
+}
+[data-theme="dark"] .cert-year { background: #fff; color: #000; }
+.cert-card h3 { margin: 0 0 5px 0; font-size: 1rem; color: #364153; }
+[data-theme="dark"] .cert-card h3 { color: #C3F208; }
+
+.cert-issuer {
+    font-size: 0.8rem; font-weight: bold; color: #555; background: rgba(255,255,255,0.5);
+    padding: 4px 10px; border-radius: 20px; margin-bottom: 15px; display: inline-block;
+}
+[data-theme="dark"] .cert-issuer { background: rgba(255,255,255,0.1); color: #ccc; }
+
+.view-cert-text {
+    font-size: 0.8rem; font-weight: bold; color: #775635; margin-top: auto; 
+    border-bottom: 1px solid transparent; transition: border-color 0.2s;
+}
+.cert-card:hover .view-cert-text { border-bottom: 1px solid #775635; }
+[data-theme="dark"] .view-cert-text { color: #C3F208; }
+[data-theme="dark"] .cert-card:hover .view-cert-text { border-bottom: 1px solid #C3F208; }
+
+
+/* 4. BOTTOM CTA */
+.resume-bottom-cta {
+    background: linear-gradient(135deg, #FBE39D 0%, rgba(191, 221, 219, 0.50) 50%, #FBE39D 100%); border-radius: 38px; width: 100%; height: auto; min-height: 260px;
+    padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 20px; box-sizing: border-box;
+}
+
+.resume-bottom-cta h2 { font-family: var(--heading-font); font-style: italic; font-size: 2.5rem; color: #775635; }
+[data-theme="dark"] .resume-bottom-cta { background: linear-gradient(141deg, rgba(255, 255, 255, 0.15) 11.23%, rgba(170, 194, 72, 0.15) 54.93%, rgba(195, 242, 8, 0.15) 86.35%); }
+[data-theme="dark"] .resume-bottom-cta h2 { font-family: 'Space Mono', monospace; font-style: normal; color: #C3F208; }
+[data-theme="dark"] .resume-bottom-cta p { color: #fff; }
+
+
+/* =========================================
+   RESPONSIVE MEDIA QUERIES (SCALED SIZES)
+   ========================================= */
+
+/* Tablet View (Max 1024px) */
+@media (max-width: 1024px) {
+    .resume-hero {
+        flex-direction: column; 
+        text-align: center; 
+        gap: 30px; 
+    }
+    
+    .resume-hero-content {
+        align-items: center; /* Centers the content since image is above it */
+    }
+
+    .resume-hero h1 { font-size: 2.8rem; }
+    
+    .resume-grid-layout { gap: 30px; }
+    .certs-grid { grid-template-columns: repeat(2, 1fr); }
+    
+    .section-header { font-size: 1.3rem; }
+    .resume-card { padding: 25px; }
+    .resume-card h3 { font-size: 1.05rem; }
+}
+
+/* Smaller Tablet / Large Phone (Max 768px) */
+@media (max-width: 768px) {
+    .resume-grid-layout { flex-direction: column; }
+    .left-col, .right-col { width: 100%; }
+}
+
+/* Mobile View (Max 600px) */
+@media (max-width: 600px) {
+    .resume-main { margin-top: 120px; }
+
+    .resume-hero { padding: 40px 20px; border-radius: 30px; gap: 20px; }
+    
+    /* SCALED DOWN IMAGE FOR MOBILE */
+    .resume-hero-img img {
+        width: 140px; 
+        height: 140px;
+    }
+
+    .resume-hero h1 { font-size: 2rem; margin-bottom: 15px; }
+    .status-badge { font-size: 0.85rem; padding: 8px 16px; margin-bottom: 15px; }
+
+    .section-header { font-size: 1.2rem; }
+    
+    .resume-card { padding: 20px; border-radius: 16px; }
+    .resume-card h3 { font-size: 1rem; }
+    .resume-card p { font-size: 0.85rem; }
+    
+    .card-year, .card-year-job { font-size: 0.7rem; padding: 4px 10px; }
+    .job-desc li { font-size: 0.8rem; }
+    .tag { font-size: 0.65rem; padding: 4px 10px; }
+
+    .job-header { flex-direction: column; gap: 8px; margin-bottom: 10px; }
+
+    .certs-grid { grid-template-columns: 1fr; }
+    .cert-card { padding: 20px; }
+    .cert-card h3 { font-size: 0.95rem; }
+
+    .resume-bottom-cta { padding: 40px 20px; border-radius: 30px; }
+    .resume-bottom-cta h2 { font-size: 1.8rem; }
+    .resume-bottom-cta p { font-size: 0.9rem; }
+
+    .cta-buttons { display: flex; flex-direction: column; width: 100%; gap: 15px; }
+    .cta-buttons .btn { width: 100%; margin: 0; }
+}
+
+/* Extra Small Phones (e.g. older Androids/iPhones) */
+@media (max-width: 400px) {
+    .resume-hero-img img { width: 120px; height: 120px; }
+    .resume-hero h1 { font-size: 1.75rem; }
+    .resume-bottom-cta h2 { font-size: 1.5rem; }
+    .contact-pill { padding: 8px 16px; font-size: 0.8rem; }
+}

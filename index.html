@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofia Sarmiento | Portfolio</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+    <div class="navbar-wrapper">
+        <nav>
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="assets/portlogo.png" alt="Logo">
+                </a>
+            </div>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html" class="active-link">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            
+            <button id="theme-toggle" class="theme-toggle-btn">
+                <svg class="icon-sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+
+                <svg class="icon-moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </nav>
+    </div>
+
+    <header class="hero-container">
+        <div class="floating-tag tag-left">
+            UI/UX | Front-end
+        </div>
+
+        <div class="floating-tag tag-right">
+            Sofia
+        </div>
+
+        <p class="hero-sub">Welcome to my web</p>
+        <h1>PORTFOLIO</h1>
+        
+        <div class="hero-doodle">
+            <img id="hero-doodle-img" src="assets/doodlelight.png" alt="Character Doodle">
+        </div>
+    </header>
+
+    <section class="about-split">
+        <div class="about-left">
+            <div class="status-badge">
+                <span style="margin-right: 5px;">★</span> Open to opportunities
+            </div>
+
+            <span class="subtitle">Hi, I'm</span>
+            <h1>SOFIA SARMIENTO</h1>
+            <p class="subtitle" style="text-transform: none; font-size: 1.5rem; margin-top: -10px;">UI/UX Designer & Front-end Developer</p>
+            
+            <p style="margin: 20px 0 30px 0; max-width: 450px;">
+                Creating beautiful, functional digital experiences. Passionate about clean design and efficient code that makes a difference.
+            </p>
+
+            <div>
+                <a href="projects.html" class="btn btn-outline">View Projects &rarr;</a>
+                <a href="contact.html" class="btn btn-primary">Hire Me</a>
+            </div>
+        </div>
+
+        <div class="about-right">
+            <img id="profile-img" src="assets/homelight.png" alt="Sofia Profile" class="profile-img">
+        </div>
+    </section>
+
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="text" name="subject" />
+        <textarea name="message"></textarea>
+        </form>
+
+    <section class="projects-preview">
+        <div class="section-header">
+            <span class="subtitle">Selected Work</span>
+            <h1>Featured Projects</h1>
+        </div>
+
+        <div class="project-grid">
+            
+            <div class="project-card" 
+                data-title="Floravia: A Flower Shop Management System" 
+                data-role="Full Stack Developer, UI/UX Designer" 
+                data-tools="MongoDB, Express.js, Vue.js, Node.js, Vercel" 
+                data-purpose="To provide a seamless online shopping experience for flower enthusiasts while offering robust inventory and order management tools for the shop owners."
+                data-features="User authentication, interactive product catalog, shopping cart functionality, secure checkout process, and a comprehensive admin dashboard."
+                data-img1="assets/projects/floravia.png"
+                data-img2="assets/projects/floravia2.png"
+                data-live="https://6-wcserver-wd-301-floravia-3gl1.vercel.app"
+                data-repo="https://github.com/seowfie/6WCSERVER-WD-301-FLORAVIA.git"
+                data-figma="https://www.figma.com/design/Ih2j5JVtXnH7ATCNSgWVph/FLORAVIA?node-id=0-1&t=yVMWgSnzbYc0NEge-1">
+                
+                <div class="project-img-container">
+                    <img src="assets/projects/floravia.png" alt="Floravia Project">
+                    <div class="img-hover-overlay">
+                        <span class="hover-pill-btn">View Details ↗</span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span class="tag">Web Design</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Vue.js</span>
+                    </div>
+                    <h3>Floravia: A Flower Shop Management System</h3>
+                    <p>A responsive e-commerce web application with features for both customers and administrators.</p>
+                </div>
+            </div>
+
+            <div class="project-card"
+                data-title="1st Regional AI Conference Website" 
+                data-role="UI/UX Design" 
+                data-tools="Figma, Vercel" 
+                data-purpose="To create an engaging and accessible digital hub for the conference, facilitating ticket registrations and distributing event information."
+                data-features="Responsive landing page, interactive event schedule, speaker profiles, integrated registration form, and optimized user accessibility."
+                data-img1="assets/projects/aiconference.png"
+                data-img2="assets/projects/aiconference2.png"
+                data-live="https://aiconhau.vercel.app/"
+                data-repo=""
+                data-figma="https://www.figma.com/design/0TXUluXh7Oqy8b8CGGMHBE/AI-Conference?node-id=170-238&t=B7yWfpDW6hbXkUhu-1">
+                
+                <div class="project-img-container">
+                    <img src="assets/projects/aiconference.png" alt="AI Conference Project">
+                    <div class="img-hover-overlay">
+                        <span class="hover-pill-btn">View Details ↗</span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span class="tag">UI/UX Design</span>
+                        <span class="tag">Figma</span>
+                        <span class="tag">Vercel</span>
+                    </div>
+                    <h3>1st Regional AI Conference Website</h3>
+                    <p>A modern, accessible conference platform designed for seamless user registration and schedule tracking.</p>
+                </div>
+            </div>
+
+            <div class="project-card"
+                data-title="Angeles City Table Tennis Club Website" 
+                data-role="UI/UX Designer, SEO Associate" 
+                data-tools="Wordpress, Google Analytics" 
+                data-purpose="To establish a strong online presence for the club, attracting new members and improving local search engine rankings."
+                data-features="SEO-optimized landing pages, dynamic blog/news section, membership inquiry forms, and Google Analytics integration."
+                data-img1="assets/projects/acttc.png"
+                data-img2="assets/projects/acttc2.png"
+                data-live="https://actabletennisclub.pro"
+                data-repo=""
+                data-figma="">
+                
+                <div class="project-img-container">
+                    <img src="assets/projects/acttc.png" alt="Table Tennis Club Project">
+                    <div class="img-hover-overlay">
+                        <span class="hover-pill-btn">View Details ↗</span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span class="tag">UI/UX Design</span>
+                        <span class="tag">SEO</span>
+                        <span class="tag">Wordpress</span>
+                    </div>
+                    <h3>Angeles City Table Tennis Club</h3>
+                    <p>A fully optimized club website designed to increase local search visibility and membership sign-ups.</p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="projects.html" class="btn btn-outline view-all-btn">See All Projects</a>
+        </div>
+    </section>
+
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
+        ↑
+    </button>
+
+    <footer class="modern-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="assets/portlogo.png" alt="Logo" class="footer-logo">
+                <h2>Let's build something amazing.</h2>
+                <p>I am currently available for freelance work and new internship opportunities.</p>
+                <a href="mailto:sarmiento21sofia@gmail.com" class="footer-contact-link">sarmiento21sofia@gmail.com ↗</a>
+            </div>
+            
+            <div class="footer-nav-container">
+                <div class="footer-nav-col">
+                    <h4>Navigation</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="resume.html">Resume</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>Socials</h4>
+                    <a href="https://www.linkedin.com/in/sofsarmiento" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/seowfie" target="_blank">GitHub</a>
+                    <a href="https://facebook.com/sarmientosof" target="_blank">Facebook</a>
+                    <a href="https://www.instagram.com/srmntsof" target="_blank">Instagram</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sofia Sarmiento.</p>
+        </div>
+    </footer>
+
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-modal">&times;</span>
+            
+            <div class="modal-header">
+                <h2 id="modal-title">Project Title</h2>
+                <span id="modal-role" class="modal-role-badge">Role</span>
+            </div>
+
+            <div class="modal-image-gallery">
+                <img id="modal-img-1" src="" alt="Project Screenshot 1">
+                <img id="modal-img-2" src="" alt="Project Screenshot 2">
+            </div>
+
+            <div class="modal-text-content">
+                <div class="modal-section">
+                    <h3>🎯 Purpose</h3>
+                    <p id="modal-purpose">Purpose text goes here.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>✨ Key Features</h3>
+                    <p id="modal-features">Features text goes here.</p>
+                </div>
+                
+                <div class="modal-tools-section">
+                    <h3>🛠️ Tools Used</h3>
+                    <p id="modal-tools">Tools go here.</p>
+                </div>
+            </div>
+
+            <div id="modal-links" class="modal-links-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

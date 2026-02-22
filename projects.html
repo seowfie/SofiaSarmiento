@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Sofia Sarmiento</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/projects.css">
+</head>
+<body>
+
+    <div class="navbar-wrapper">
+        <nav>
+            <div class="nav-logo">
+                <a href="home.html"><img src="assets/portlogo.png" alt="Logo"></a>
+            </div>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html" class="active-link">Projects</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button id="theme-toggle" class="theme-toggle-btn">
+                <svg class="icon-sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="icon-moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </nav>
+    </div>
+
+    <main class="projects-main">
+        
+        <header class="projects-header">
+            <div class="status-badge" style="margin-bottom: 20px;">
+                <span>✨ </span> My Works
+            </div>
+            <h1>My Projects</h1>
+            <p>A collection of my recent work across design and development.</p>
+        </header>
+
+        <section class="filter-section">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="project-search" placeholder="Search projects...">
+            </div>
+            
+            <div class="filter-container">
+                <span class="filter-label">Filter by:</span>
+                <div class="filter-buttons" id="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web Design</button>
+                    <button class="filter-btn" data-filter="uiux">UI/UX</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="dev">Development</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="project-grid" id="projects-grid">
+            
+            <div class="project-card" data-category="web dev uiux"
+                data-title="Floravia: A Flower Shop Management System" 
+                data-role="Full Stack Developer, UI/UX Designer" 
+                data-tools="MongoDB, Express.js, Vue.js, Node.js, Vercel" 
+                data-purpose="To provide a seamless online shopping experience for flower enthusiasts while offering robust inventory and order management tools for the shop owners."
+                data-features="User authentication, interactive product catalog, shopping cart functionality, secure checkout process, and a comprehensive admin dashboard."
+                data-img1="assets/projects/floravia.png"
+                data-img2="assets/projects/floravia2.png"
+                data-live="https://6-wcserver-wd-301-floravia-3gl1.vercel.app"
+                data-repo="https://github.com/seowfie/6WCSERVER-WD-301-FLORAVIA.git"
+                data-figma="https://www.figma.com/design/Ih2j5JVtXnH7ATCNSgWVph/FLORAVIA?node-id=0-1&t=yVMWgSnzbYc0NEge-1">
+                
+                <div class="project-img-container">
+                    <img src="assets/projects/floravia.png" alt="Floravia Project">
+                    <div class="img-hover-overlay"><span class="hover-pill-btn">View Details ↗</span></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags"><span class="tag">Development</span><span class="tag">Vue.js</span></div>
+                    <h3>Floravia: Flower Shop System</h3>
+                    <p>A responsive e-commerce web application with features for both customers and administrators.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="web uiux"
+                data-title="1st Regional AI Conference Website" 
+                data-role="UI/UX Design" 
+                data-tools="Figma, Vercel" 
+                data-purpose="To create an engaging and accessible digital hub for the conference, facilitating ticket registrations and distributing event information."
+                data-features="Responsive landing page, interactive event schedule, speaker profiles, integrated registration form, and optimized user accessibility."
+                data-img1="assets/projects/aiconference.png"
+                data-img2="assets/projects/aiconference2.png"
+                data-live="https://aiconhau.vercel.app/"
+                data-repo=""
+                data-figma="https://www.figma.com/design/0TXUluXh7Oqy8b8CGGMHBE/AI-Conference?node-id=170-238&t=B7yWfpDW6hbXkUhu-1">
+                
+                <div class="project-img-container">
+                    <img src="assets/projects/aiconference.png" alt="AI Conference Project">
+                    <div class="img-hover-overlay"><span class="hover-pill-btn">View Details ↗</span></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags"><span class="tag">UI/UX</span><span class="tag">Web Design</span></div>
+                    <h3>1st Regional AI Conference</h3>
+                    <p>A modern, accessible conference platform designed for seamless user registration and schedule tracking.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="web uiux"
+                data-title="Angeles City Table Tennis Club Website" 
+                data-role="UI/UX Designer, SEO Associate" 
+                data-tools="Wordpress, Google Analytics" 
+                data-purpose="To establish a strong online presence for the club, attracting new members and improving local search engine rankings."
+                data-features="SEO-optimized landing pages, dynamic blog/news section, membership inquiry forms, and Google Analytics integration."
+                data-img1="assets/projects/acttc.png"
+                data-img2="assets/projects/acttc2.png"
+                data-live="https://actabletennisclub.pro"
+                data-repo=""
+                data-figma="">
+                
+                <div class="project-img-container">
+                    <img src="assets/projects/acttc.png" alt="Table Tennis Club Project">
+                    <div class="img-hover-overlay"><span class="hover-pill-btn">View Details ↗</span></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags"><span class="tag">UI/UX</span><span class="tag">SEO</span></div>
+                    <h3>AC Table Tennis Club</h3>
+                    <p>A fully optimized club website designed to increase local search visibility and membership sign-ups.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="web dev uiux"
+                data-title="PoCaSwap" 
+                data-role="Full Stack Developer, UI/UX Designer" 
+                data-tools="PHP, MySQL, CSS, Figma, Awardspace" 
+                data-purpose="To create a secure and user-friendly e-commerce platform dedicated to trading collectible items."
+                data-features="User accounts, item listing management, secure trade negotiation interface, and fully responsive design."
+                data-img1="assets/projects/pocaswap.png"
+                data-img2="assets/projects/pocaswap2.png"
+                data-live="https://pocaswap.onlinewebshop.net"
+                data-repo="https://github.com/Ricartes18/Trade_E-commerce.git"
+                data-figma="https://www.figma.com/design/3QG6pD8e5njHdLRXsG8g97/DWEB-Design?t=yVMWgSnzbYc0NEge-1">
+                
+                <div class="project-img-container">
+                    <img src="assets/projects/pocaswap.png" alt="PoCaSwap Project">
+                    <div class="img-hover-overlay"><span class="hover-pill-btn">View Details ↗</span></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags"><span class="tag">Development</span><span class="tag">PHP</span></div>
+                    <h3>PoCaSwap</h3>
+                    <p>An e-commerce platform enabling users to securely trade and negotiate collectible items.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="web uiux"
+                data-title="The Access Point Website" 
+                data-role="UI/UX Designer Desktop" 
+                data-tools="Wordpress" 
+                data-purpose="To provide a centralized information hub and access portal for university students and faculty."
+                data-features="Desktop-optimized UI, content management system integration, and a dynamic news feed."
+                data-img1="assets/projects/accesspoint.png"
+                data-img2="assets/projects/accesspoint2.png"
+                data-live="https://theaccesspointhau.com"
+                data-repo=""
+                data-figma="">
+                
+                <div class="project-img-container">
+                    <img src="assets/projects/accesspoint.png" alt="Access Point Project">
+                    <div class="img-hover-overlay"><span class="hover-pill-btn">View Details ↗</span></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags"><span class="tag">Web Design</span><span class="tag">Wordpress</span></div>
+                    <h3>The Access Point Website</h3>
+                    <p>Official website maintenance and content strategy management for the student organization.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="mobile dev uiux"
+                data-title="Curio Shop" 
+                data-role="Mobile Developer, UI/UX Designer" 
+                data-tools="Flutter, Dart, Figma" 
+                data-purpose="To design and develop a cohesive mobile shopping experience for unique and curated goods."
+                data-features="Cross-platform mobile compatibility, intuitive product browsing, interactive cart, and clean UI."
+                data-img1="assets/projects/curioshop.png"
+                data-img2="assets/projects/curioshop2.png"
+                data-live=""
+                data-repo="https://github.com/seowfie/CurioShop.git"
+                data-figma="https://www.figma.com/design/X3ncTj3uHh3edaaTD8ckwr/CURIO-SHOP?t=yVMWgSnzbYc0NEge-1"
+                data-apk="assets/projects/CurioShop.apk"> 
+                <div class="project-img-container">
+                    <img src="assets/projects/curioshop.png" alt="Curio Shop Project">
+                    <div class="img-hover-overlay"><span class="hover-pill-btn">View Details ↗</span></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags"><span class="tag">Mobile Design</span><span class="tag">Flutter</span></div>
+                    <h3>Curio Shop Mobile App</h3>
+                    <p>A cross-platform mobile application designed to offer an intuitive and seamless shopping experience.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="web dev uiux"
+                data-title="Pokémon Center Website" 
+                data-role="Frontend Developer, UI/UX Designer" 
+                data-tools="Angular, Tailwind CSS" 
+                data-purpose="To build a modern, high-performance frontend interface for browsing Pokémon data using external APIs."
+                data-features="REST API integration, responsive Tailwind styling, and dynamic search and filtering capabilities."
+                data-img1="assets/projects/pokemon.png"
+                data-img2="assets/projects/pokemon2.png"
+                data-live="https://69357a82bc13a95bcebfa262--prelimprojgroup1.netlify.app"
+                data-repo="https://github.com/katdzy/prelim-project-group-1.git"
+                data-figma="">
+                
+                <div class="project-img-container">
+                    <img src="assets/projects/pokemon.png" alt="Pokemon Center Project">
+                    <div class="img-hover-overlay"><span class="hover-pill-btn">View Details ↗</span></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags"><span class="tag">Angular</span><span class="tag">Tailwind</span></div>
+                    <h3>Pokémon Center Website</h3>
+                    <p>Designed with a clean, user-friendly interface for easy navigation and data fetching.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2 id="modal-title">Project Title</h2>
+                <span id="modal-role" class="modal-role-badge">Role</span>
+            </div>
+            <div class="modal-image-gallery">
+                <img id="modal-img-1" src="" alt="Project Screenshot 1">
+                <img id="modal-img-2" src="" alt="Project Screenshot 2">
+            </div>
+            <div class="modal-text-content">
+                <div class="modal-section">
+                    <h3>🎯 Purpose</h3>
+                    <p id="modal-purpose">Purpose text goes here.</p>
+                </div>
+                <div class="modal-section">
+                    <h3>✨ Key Features</h3>
+                    <p id="modal-features">Features text goes here.</p>
+                </div>
+                <div class="modal-tools-section">
+                    <h3>🛠️ Tools Used</h3>
+                    <p id="modal-tools">Tools go here.</p>
+                </div>
+            </div>
+            <div id="modal-links" class="modal-links-container">
+                </div>
+        </div>
+    </div>
+
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
+        ↑
+    </button>
+
+    <footer class="modern-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="assets/portlogo.png" alt="Logo" class="footer-logo">
+                <h2>Let's build something amazing.</h2>
+                <p>I am currently available for freelance work and new internship opportunities.</p>
+                <a href="mailto:sarmiento21sofia@gmail.com" class="footer-contact-link">sarmiento21sofia@gmail.com ↗</a>
+            </div>
+            
+            <div class="footer-nav-container">
+                <div class="footer-nav-col">
+                    <h4>Navigation</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="resume.html">Resume</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-nav-col">
+                    <h4>Socials</h4>
+                    <a href="https://www.linkedin.com/in/sofsarmiento" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/seowfie" target="_blank">GitHub</a>
+                    <a href="https://facebook.com/sarmientosof" target="_blank">Facebook</a>
+                    <a href="https://www.instagram.com/srmntsof" target="_blank">Instagram</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sofia Sarmiento. </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="projects.js"></script>
+</body>
+</html>
